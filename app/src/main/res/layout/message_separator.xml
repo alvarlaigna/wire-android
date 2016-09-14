@@ -41,7 +41,7 @@
         style="?messageStreamTimestampSmall"
         android:layout_width="match_parent"
         android:layout_height="@dimen/wire__margin__huge"
-        android:layout_alignStart="@id/unread_dot"
+        android:layout_toEndOf="@id/unread_dot"
         android:gravity="center_vertical"
         android:includeFontPadding="false"
         android:textAllCaps="true"
