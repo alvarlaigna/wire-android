@@ -16,10 +16,10 @@
 #   public *;
 #}
 
--keepclassmembers class com.waz.zclient.views.** {
-   void set*(***);
-   *** get*();
-}
+#-keepclassmembers class com.waz.zclient.views.** {
+#   void set*(***);
+#   *** get*();
+#}
 
 -keep class scala.collection.SeqLike { public java.lang.String toString(); }
 -keep class scala.concurrent.forkjoin.** { *; }
@@ -29,7 +29,7 @@
 -keep class com.waz.call.CaptureDevice { *; }
 -keep class com.waz.media.manager.** { *; }
 -keep class com.waz.service.call.** { *; }
--keep class com.waz.zclient.controllers.loadtimelogger.LoadTimeLoggerController { *; }
+#-keep class com.waz.zclient.controllers.loadtimelogger.LoadTimeLoggerController { *; }
 
 -keepclassmembers class **.R$* {public static <fields>;}
 -keep class **.R$*
@@ -61,10 +61,10 @@
 }
 
 # keep setters in controllers so that animations can still work
--keepclassmembers class com.waz.zclient.controllers.** {
-   void set*(***);
-   *** get*();
-}
+#-keepclassmembers class com.waz.zclient.controllers.** {
+#   void set*(***);
+#   *** get*();
+#}
 
 -ignorewarnings
 
@@ -127,3 +127,6 @@
 # Video parsing tools for video message preview
 -keep class com.coremedia.iso.** { *; }
 -keep class com.googlecode.mp4parser.** { *; }
+
+# Do not obfuscate for all com.waz.zclient.x
+-dontobfuscate
